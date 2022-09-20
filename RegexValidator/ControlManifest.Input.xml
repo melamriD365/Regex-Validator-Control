@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="MEA" constructor="RegexValidator" version="0.0.1" display-name-key="RegexValidator" description-key="RegexValidator description" control-type="virtual" >
+    <property name="textInput" display-name-key="Text Input to validate" description-key="Text Input to validate" of-type-group="SingleLine" usage="bound" required="true" />
+    <property name="RegexExpression" display-name-key="Regex Expression" description-key="Regex Expression" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="isNeededToValidateForExistingData" display-name-key="Validate for existing data ?" description-key="Test existing data against RegexExpression" of-type="Enum" usage="input" required="false">
+      <value name="Yes" display-name-key="Yes">1</value>
+      <value name="No" display-name-key="No">0</value>
+   </property>
+    <property name="isValid" display-name-key="Regex validation result" description-key="Regex validation result" of-type="TwoOptions" usage="output"/>
+    <type-group name="SingleLine"> 
+      <type>SingleLine.Text</type> 
+      <type>SingleLine.Phone</type>
+      <type>SingleLine.Email</type>      
+    </type-group>
+    <resources>
+      <code path="index.ts" order="1"/>
+      <platform-library name="React" version="16.8.6" />
+      <platform-library name="Fluent" version="8.29.0" />
+    </resources>
+  </control>
+</manifest>
